@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
+  <title>Agridera - Apple Varieties</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<div class="header shadow">
+  <div class="wrapper">
+    <div class="row">
+      <div class="w-2">
+        <div id="logo">
+          <a href="index.html"><img src="images/Logo.png" alt="Agridera Logo"></a>
+        </div>
+      </div>
+      <div class="w-2 align-right">
+        <div id="search">
+          <div id="search-in" class="flex">
+            <input type="search" placeholder="Search">
+            <button>Submit</button>
+          </div>
+        </div>
+        <div id="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Company profile</a></li>
+            <li><a href="all-apples.html">Products</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">R&D</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-apple-one">
+  <div class="wrapper">
+    <div class="return">
+      <p><a href="all-apples.html">←&nbsp;&nbsp;&nbsp;&nbsp;Return to Apple Varieties</a></p>
+    </div>
+    <div class="apple-one">
+      <div class="w-2">
+        <h1 id="apple-title">Apple Variety</h1>
+        <h2>Premium Apple Variety</h2>
+        <p class="text-content2-1">×××××</p>
+        <div class="right-text">
+          <img id="apple-icon" src="images/default-apple.png" alt="Apple icon">
+          <span>Excellent quality and taste!</span>
+        </div>
+        <div class="green-titles">
+          <span><b>CHARACTERISTICS</b></span>
+          <hr class="under_adresses">
+          <br>
+        </div>
+        <span class="character">
+          <b>Resistance</b> <br>
+          HR: Apple scab; Powdery mildew; <br> 
+          IR: Fire blight
+        </span>
+        <div class="green-titles">
+          <span><b>Tree</b></span>
+          <hr class="under_adresses">
+          <br>
+        </div>
+        <ul class="ul-appleone">
+          <li><span>Moderate vigor with good branching structure.</span></li>
+          <li><span>High productivity with consistent fruit setting.</span></li>
+          <li><span>Adaptable to various growing conditions.</span></li>
+        </ul>
+        <div class="green-titles">
+          <span><b>Fruit</b></span>
+          <hr class="under_adresses">
+          <br>
+        </div>
+        <ul class="ul-appleone">
+          <li><span>Long shelf life and excellent storage qualities.</span></li>
+          <li><span>Attractive color with glossy finish.</span></li>
+          <li><span>Average fruit size: 180-220 grams.</span></li>
+        </ul>
+        
+        <div id="add-to-cart-btn">
+          <button class="pdf-download-button">
+            <span class="pdf-icon"></span>
+            Add to cart
+          </button>
+        </div>
+        <div id="go-to-cart-btn" style="display: none;">
+          <a href="contact-us.html" class="pdf-download-button">
+            <span class="pdf-icon"></span>
+            Go to cart
+          </a>
+        </div>
+      </div>
+      <div class="w-2">
+        <img class="img-apple" id="apple-image" src="images/default-apple.jpg" alt="Apple">
+        <div class="green-titles">
+          <span><b>Harvest Season</b></span>
+          <hr class="under_adresses">
+          <br>
+        </div>
+        <ul class="ul-appleone">
+          <li><span>Early Season</span></li>
+          <li><span>Mid Season</span></li>
+          <li><span>Late Season</span></li>
+        </ul>
+        <div class="green-titles">
+          <span><b>Color</b></span>
+          <hr class="under_adresses">
+          <br>
+        </div>
+        <span class="text-appleone" id="apple-color">Various</span>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <div id="links">
+        <ul>
+          <li><a href="">Profile</a></li>
+          <li><a href="">Management</a></li>
+          <li><a href="all-apples.html">Products</a></li>
+          <li><a href="">R&D</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="social">
+        <a href="https://linkedin.com"><img src="images/Ico_in.png" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com"><img src="images/Ico_inst.png" alt="Instagram"></a>
+        <a href="https://www.youtube.com"><img src="images/Ico_tube.png" alt="YouTube"></a>
+        <a href="https://twitter.com"><img src="images/Ico_tw.png" alt="Twitter"></a>
+        <a href="https://facebook.com"><img src="images/Ico_fb.png" alt="Facebook"></a>
+      </div>      
+    </div>
+    <p class="copyright">AGRIDERA SEEDS & AGRICULTURE LTD. © 2023</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const id = window.location.hash.substring(1);
+  
+  if (id) {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const product = products.find(item => item.id == id) || {};
+    
+    if (product.title) {
+      document.getElementById('apple-title').textContent = product.title;
+      document.getElementById('apple-image').src = product.image;
+      document.getElementById('apple-image').alt = product.title;
+      
+      const color = getAppleColor(product.title);
+      document.getElementById('apple-color').textContent = color;
+    }
+    
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const isInCart = !!cart[id];
+    
+    document.getElementById('add-to-cart-btn').style.display = isInCart ? 'none' : 'block';
+    document.getElementById('go-to-cart-btn').style.display = isInCart ? 'block' : 'none';
+    
+    document.querySelector('#add-to-cart-btn button').addEventListener('click', function() {
+      if (!cart[id]) {
+        cart[id] = 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload();
+      }
+    });
+  }
+  
+  function getAppleColor(title) {
+    if (!title) return 'Various';
+    if (title.includes('Golden')) return 'Yellow-Green';
+    if (title.includes('Granny')) return 'Green';
+    if (title.includes('Red')) return 'Red';
+    if (title.includes('Fuji')) return 'Red-Yellow';
+    if (title.includes('Honeycrisp')) return 'Red-Orange';
+    return 'Various';
+  }
+});
+</script>
+</body>
+</html>

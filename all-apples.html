@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
+  <title>Agridera - Premium Apple Varieties</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="header">
+    <div class="wrapper">
+      <div class="row">
+        <div class="w-2">
+          <div id="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Agridera Logo"></a>
+          </div>
+        </div>
+        <div class="w-2 align-right">
+          <div id="search">
+            <div id="search-in" class="flex">
+              <input type="search" placeholder="Search apples...">
+              <button>Search</button>
+            </div>
+          </div>
+          <div id="menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="">Company Profile</a></li>
+              <li><a href="all-apples.html">Products</a></li>
+              <li><a href="">Services</a></li>
+              <li><a href="">R&D</a></li>
+              <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contand">
+    <div id="slider-apple">
+      <img src="images/apple-header.jpg" alt="Fresh apples from Agridera">
+    </div>
+  </div>
+
+  <div class="bg1" style="background-color: #fef9f0;">
+    <div class="wrapper">
+      <div class="description">
+        <h2 class="text-agridera" style="color: #4a6b22;">Agridera's Exceptional Apple Varieties</h2>
+        
+        <p class="text-content2">×××××</p>
+
+        <p class="text-content4" style="color: #4a6b22;">At Agridera, we pride ourselves on developing premium apple varieties that combine exceptional flavor, crisp texture, and beautiful appearance. Our apples are bred to meet the highest standards of quality and taste.</p>
+        
+        <div class="blocks">
+          <div class="vertical-line" style="background-color: #7cb342;"></div>
+          <p class="text-content4" style="color: #4a6b22;">Our apple breeding program focuses on three main categories: Dessert Apples, Cooking Apples, and Dual-Purpose Apples, each carefully developed to meet specific market needs.</p>    
+        </div>
+        
+        <div class="table">
+          <div class="subhead">
+            <h4 style="color: #4a6b22;">Dessert Apples</h4>
+            <hr style="border-color: #7cb342;"/>
+            <p class="text-content4" style="color: #4a6b22;">Perfect for fresh consumption, our dessert apples feature a crisp texture and balanced sweetness. These varieties are particularly popular in European and North American markets.</p>
+          </div>
+          <div class="subhead">
+            <h4 style="color: #4a6b22;">Cooking Apples</h4>
+            <hr style="border-color: #7cb342;"/>
+            <p class="text-content4" style="color: #4a6b22;">Specifically bred for cooking and baking, these apples hold their shape well when cooked and provide the perfect balance of flavor for pies, sauces, and other culinary creations.</p>
+          </div>
+          <div class="subhead">
+            <h4 style="color: #4a6b22;">Dual-Purpose Apples</h4>
+            <hr style="border-color: #7cb342;"/>
+            <p class="text-content4" style="color: #4a6b22;">Versatile varieties that perform equally well for fresh eating and cooking. These apples are increasingly popular in markets where consumers value multipurpose fruits.</p>
+          </div>
+        </div>
+        
+        <div class="tomatoes">
+          <div class="wrapper-tomato" id="all-apples">
+            <div class="tomato w-3" v-for="item in products">
+              <a :href="'apple-one.html#'+item.id" class="link">
+                <img v-bind:src="item.image" :alt="item.title">
+                <p><b>{{ item.title }}</b> <br> {{ item.short_text }}</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="wrapper">
+      <div class="footer-content">
+        <div id="links">
+          <ul>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Management</a></li>
+            <li><a href="all-apples.html">Products</a></li>
+            <li><a href="">R&D</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="social">
+          <a href="https://linkedin.com"><img src="images/Ico_in.png" alt="LinkedIn"></a>
+          <a href="https://www.instagram.com"><img src="images/Ico_inst.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com"><img src="images/Ico_tube.png" alt="YouTube"></a>
+          <a href="https://twitter.com"><img src="images/Ico_tw.png" alt="Twitter"></a>
+          <a href="https://facebook.com"><img src="images/Ico_fb.png" alt="Facebook"></a>
+        </div>      
+      </div>
+      <p class="copyright">AGRIDERA SEEDS & AGRICULTURE LTD. © 2023</p>
+    </div>
+  </div>
+</body>
+</html>
